@@ -202,7 +202,7 @@ def depth_first_search(start_state, goal_state, max_depth):
     # While there are still unexplored states in the stack
     while unexplored_states:
 
-        # Get the current node from the head of the queue
+        # Get the current node from the head of the stack
         current_node = unexplored_states.pop(0)
             
         # Add the current node's state to a list of states
@@ -232,10 +232,10 @@ def depth_first_search(start_state, goal_state, max_depth):
                 # Serialize frontier node's state
                 state_srl = serialize(frontier.get_state())
                     
-                # If state not explored, add frontier to front of queue
+                # If state not explored, add frontier to front of stack
                 if state_srl not in explored_states:
                         
-                    # insert at front of the queue
+                    # insert at front of the stack
                     unexplored_states.insert(0, frontier)  
                     
     # All search options exhausted at depth limit
